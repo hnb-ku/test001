@@ -49,7 +49,9 @@ export default Ember.Component.extend({
 
     this.set("args", { articles: articles });
 
-    console.log($(".owl-carousel"));
+    Ember.run.schedule("afterRender", this, function() {
+      console.log($(".owl-carousel"));
+    });
 
     $(".owl-carousel").owlCarousel({
       loop: true,
