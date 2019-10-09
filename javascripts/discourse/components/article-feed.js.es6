@@ -49,6 +49,8 @@ export default Ember.Component.extend({
 
     this.set("args", { articles: articles });
 
+    console.log($(".owl-carousel"));
+
     $(".owl-carousel").owlCarousel({
       loop: true,
       margin: 10,
@@ -59,11 +61,11 @@ export default Ember.Component.extend({
           nav: true
         },
         600: {
-          items: 3,
+          items: 2,
           nav: false
         },
         1000: {
-          items: 5,
+          items: 4,
           nav: true,
           loop: false
         }
