@@ -67,7 +67,8 @@ export default Ember.Component.extend({
           },
           750: {
             items: 3,
-            nav: true
+            nav: true,
+            stagePadding: 50
           },
           1100: {
             items: 4,
