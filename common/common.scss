@@ -4,6 +4,7 @@ html {
 
 .article-feed-component {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   min-height: 265px;
   padding-bottom: 2em;
