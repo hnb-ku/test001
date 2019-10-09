@@ -12,12 +12,6 @@ html {
   overflow: scroll hidden;
 
   .article-wrapper {
-    .desktop-view & {
-      width: 25%;
-    }
-    & + .article-wrapper {
-      margin-left: 1em;
-    }
   }
 
   .article-link {
