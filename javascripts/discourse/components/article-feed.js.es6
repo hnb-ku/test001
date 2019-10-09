@@ -50,8 +50,13 @@ export default Ember.Component.extend({
     this.set("args", { articles: articles });
 
     $(".owl-carousel").owlCarousel();
+    this.carousel();
 
     Ember.run.later(() => this.refreshCache(), TIMEOUT);
+  },
+
+  carousel() {
+    $(".owl-carousel").owlCarousel();
   },
 
   refreshCache() {
