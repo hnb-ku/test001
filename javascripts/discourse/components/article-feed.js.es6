@@ -53,31 +53,25 @@ export default Ember.Component.extend({
       $(".owl-carousel").owlCarousel({
         loop: false,
         margin: 10,
+        dots: false,
+        navContainer: ".feed-nav",
         responsiveClass: true,
         responsive: {
           0: {
             items: 1,
-            nav: true,
-            loop: false,
-            dots: false
+            nav: true
           },
           450: {
             items: 2,
-            nav: true,
-            loop: false,
-            dots: false
+            nav: true
           },
           750: {
             items: 3,
-            nav: true,
-            loop: false,
-            dots: false
+            nav: true
           },
           1100: {
             items: 4,
-            nav: false,
-            loop: false,
-            dots: false
+            nav: false
           }
         }
       });
