@@ -60,12 +60,17 @@ export default Ember.Component.extend({
             nav: true,
             loop: false
           },
-          600: {
+          450: {
             items: 2,
             nav: true,
             loop: false
           },
-          1000: {
+          750: {
+            items: 3,
+            nav: false,
+            loop: false
+          },
+          1100: {
             items: 4,
             nav: false,
             loop: false
