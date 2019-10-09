@@ -5,14 +5,16 @@ html {
 .article-feed-component {
   display: flex;
   align-items: center;
-  justify-content: center;
   min-height: 265px;
   padding-bottom: 2em;
   border-bottom: 2px solid $primary-low;
   margin: 3em 0 2em 0;
+  overflow: scroll hidden;
 
   .article-wrapper {
-    width: 25%;
+    .desktop-view & {
+      width: 25%;
+    }
     & + .article-wrapper {
       margin-left: 1em;
     }
