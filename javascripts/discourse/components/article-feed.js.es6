@@ -49,23 +49,25 @@ export default Ember.Component.extend({
 
     this.set("args", { articles: articles });
 
-    Ember.run.schedule("afterRender", this, function() {
+    Ember.run.schedule("afterRender", this, () => {
       $(".owl-carousel").owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         responsiveClass: true,
         responsive: {
           0: {
             items: 1,
-            nav: true
+            nav: true,
+            loop: false
           },
           600: {
             items: 2,
-            nav: false
+            nav: true,
+            loop: false
           },
           1000: {
             items: 4,
-            nav: true,
+            nav: false,
             loop: false
           }
         }
