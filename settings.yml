@@ -12,4 +12,4 @@ cache_timeout:
   description: "How long - in minutes - to wait before fetching new articles while the user is on the site. This prevents overloading the source server."
 extend_content_security_policy:
   type: list
-  default: "script_src: https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.9/jquery.jcarousel.min.js"
+  default: "script_src: https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
