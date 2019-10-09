@@ -59,11 +59,13 @@ export default Ember.Component.extend({
         responsive: {
           0: {
             items: 1,
-            nav: true
+            nav: true,
+            stagePadding: 50
           },
           450: {
             items: 2,
-            nav: true
+            nav: true,
+            stagePadding: 50
           },
           750: {
             items: 3,
