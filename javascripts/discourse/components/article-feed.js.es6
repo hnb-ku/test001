@@ -79,7 +79,7 @@ export default Ember.Component.extend({
         },
         1100: {
           items: 4,
-          nav: false
+          nav: true
         }
       }
     });
