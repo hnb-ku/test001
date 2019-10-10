@@ -2,7 +2,7 @@ article_source:
   default: "https://billswire.usatoday.com"
   description: "The URL of the source site to fetch the articles from. Example: https://billswire.usatoday.com"
 filter:
-  default: "posts?per_page=4"
+  default: "posts?per_page=8"
   description: "The URL parameter added to the request to fetch articles. This is used to only fetch the 4 most recent articles by default"
 thumbnail_size:
   default: "?w=600"
