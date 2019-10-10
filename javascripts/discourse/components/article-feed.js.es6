@@ -61,7 +61,7 @@ export default Ember.Component.extend({
       loop: false,
       margin: 10,
       dots: false,
-      navContainer: ".feed-nav",
+      navContainer: ".feed-nav-wrapper",
       responsiveClass: true,
       responsive: {
         0: {
