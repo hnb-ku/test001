@@ -1,11 +1,16 @@
+@import "common/artcile-feed";
+@import "common/carousel";
+
 html {
   font-family: "Open Sans", sans-serif;
+}
+
+.d-header {
+  box-shadow: none;
+  border-bottom: 2px solid $tertiary;
 }
 
 .alert-too-few-topics,
 .alert-bootstrap-mode {
   display: none;
 }
-
-@import "common/artcile-feed";
-@import "common/carousel";
