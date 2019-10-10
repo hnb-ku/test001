@@ -37,12 +37,14 @@ html {
   .article-link {
     color: $primary;
     font-weight: bold;
-    margin-bottom: 0;
     line-height: $line-height-large;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    h2 {
+      margin-bottom: 0;
+    }
   }
 
   .article-thumbnail {
