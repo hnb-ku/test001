@@ -19,6 +19,7 @@ html {
         font-size: $font-up-1;
         position: relative;
         border: 1px solid transparent;
+        font-weight: bold;
 
         &:hover {
           color: $tertiary;
