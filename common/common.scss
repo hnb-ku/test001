@@ -17,35 +17,17 @@ html {
         color: $primary;
         transition: all 0.15s;
         font-size: $font-up-1;
-        postition: relative;
+        position: relative;
 
         &:hover {
           color: $tertiary;
           background-color: transparent;
-          &:after {
-            background: $tertiary;
-            height: 4px;
-            width: 100%;
-            position: absolute;
-            content: "";
-            top: 100%;
-            left: 0;
-          }
         }
       }
 
       a.active {
         color: $tertiary;
         background-color: transparent;
-        &:after {
-          background: $tertiary;
-          height: 4px;
-          width: 100%;
-          position: absolute;
-          content: "";
-          top: 100%;
-          left: 0;
-        }
       }
     }
   }
