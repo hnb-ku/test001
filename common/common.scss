@@ -25,6 +25,7 @@ html {
           &:after {
             background: $tertiary;
             height: 4px;
+            width: 100%;
             position: absolute;
             content: "";
             top: 100%;
@@ -39,6 +40,7 @@ html {
         &:after {
           background: $tertiary;
           height: 4px;
+          width: 100%;
           position: absolute;
           content: "";
           top: 100%;
