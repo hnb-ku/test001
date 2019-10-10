@@ -16,7 +16,14 @@ $top_header_background: rgb(245, 245, 245);
     width: 150vw;
     left: -50vw;
     background: $top_header_background;
-    z-index: -1;
+    z-index: 0;
+  }
+
+  .google-adsense-label,
+  .google-dfp-ad-label,
+  .dfp-ad-unit {
+    z-index: 1;
+    position: relative;
   }
 }
 
