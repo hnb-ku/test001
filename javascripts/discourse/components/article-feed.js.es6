@@ -1,94 +1,92 @@
-html {
-  font-family: "Open Sans", sans-serif;
-}
+// convert minutes added in component settings to milliseconds
+const TIMEOUT = settings.cache_timeout * 60 * 1000;
 
-.alert-too-few-topics,
-.alert-bootstrap-mode {
-  display: none;
-}
+const ajaxUrl = `${settings.article_source}/wp-json/wp/v2/${settings.filter}&_embed`;
 
-.article-feed-component {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  min-height: 265px;
-  padding: 0 0.25em 2em 0.25em;
-  border-bottom: 2px solid $primary-low;
-  margin: 3em 0 2em 0;
+export default Ember.Component.extend({
+  classNames: "article-feed-component",
 
-  .article-feed-heading-wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1em;
-    .article-feed-heading {
-      border-bottom: 5px solid $tertiary;
-      padding: 0 1.35em;
-      font-size: $font-up-2;
-      display: inline-block;
+  init() {
+    this._super(...arguments);
+
+    if (!this.site._articleFeed) {
+      this.site._articleFeed = [];
     }
-  }
 
-  .article-wrapper {
-  }
+    $.ajax({
+      url: ajaxUrl,
+      beforeSend: () => {
+        if (this.site._articleFeed.length) {
+          this.pushFeed(this.site._articleFeed[0]);
 
-  .article-link {
-    line-height: $line-height-large;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    position: relative;
-    h4 {
-      margin-bottom: 0;
-      position: absolute;
-      bottom: 0;
-      padding: 0.5em;
-      background: rgba(0, 0, 0, 0.7);
-      color: $secondary;
-      transition: color 0.25s ease-in-out;
-    }
-    &:hover {
-      h4 {
-        color: $tertiary;
+          return false;
+        }
+        return true;
+      },
+      complete: result => {
+        this.site._articleFeed.push(result.responseJSON);
+        this.pushFeed(result.responseJSON);
       }
+    });
+  },
+
+  pushFeed(feed) {
+    const articles = [];
+
+    let i;
+    for (i = 0; i < feed.length; ++i) {
+      const article = [];
+
+      article.title = feed[i].title.rendered;
+      article.thumbnail =
+        feed[i]._embedded["wp:featuredmedia"].firstObject.source_url +
+        settings.thumbnail_size;
+      article.thumbnailTitle =
+        feed[i]._embedded["wp:featuredmedia"].firstObject.title.rendered;
+      article.link = feed[i].link;
+      articles.push(article);
     }
+
+    this.set("args", { articles: articles });
+
+    Ember.run.schedule("afterRender", this, () => {
+      this.carousel();
+    });
+
+    Ember.run.later(() => this.refreshCache(), TIMEOUT);
+  },
+
+  carousel() {
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      stagePadding: 50,
+      margin: 10,
+      dots: false,
+      navContainer: ".feed-nav-wrapper",
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        500: {
+          items: 2,
+          nav: true
+        },
+        750: {
+          items: 3,
+          nav: true
+        },
+        1100: {
+          items: 4,
+          nav: false
+        }
+      }
+    });
+  },
+
+  refreshCache() {
+    this.set("args", "");
+    this.site._articleFeed = "";
   }
-
-  .article-thumbnail {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    margin-bottom: 0.25em;
-  }
-
-  .article-title {
-    min-height: 2.75em;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-}
-
-// carousel
-
-.owl-next,
-.owl-prev {
-  background: none;
-  border: none;
-  outline: none;
-}
-
-.feed-nav-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 2em;
-  margin-bottom: -0.75em;
-}
-
-.owl-carousel .owl-stage {
-  padding-bottom: 0.25em;
-}
+});
