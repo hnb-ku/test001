@@ -4,8 +4,6 @@
     <h4 class="article-feed-heading">Latest Headlines</h4>
   </div>
 
-  <div class="feed-nav-wrapper"></div>
-
   <div class="owl-carousel owl-theme">
     {{#each args.articles as |article|}}
       <div class="article-wrapper ">
@@ -26,5 +24,7 @@
       </div>
     {{/each}}
   </div>
+
+  <div class="feed-nav-wrapper"></div>
 
 {{/if}}
