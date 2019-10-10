@@ -2,6 +2,11 @@ html {
   font-family: "Open Sans", sans-serif;
 }
 
+.alert-too-few-topics,
+.alert-bootstrap-mode {
+  display: none;
+}
+
 .article-feed-component {
   display: flex;
   flex-wrap: wrap;
