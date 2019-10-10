@@ -64,10 +64,6 @@ export default Ember.Component.extend({
       dots: false,
       navContainer: ".feed-nav-wrapper",
       responsiveClass: true,
-      navText: [
-        '<button type="button" role="presentation" class="owl-prev btn btn-flat"><span aria-label="Previous">‹</span></button>',
-        '<button type="button" role="presentation" class="btn btn-flat owl-next"><span aria-label="Previous">›</span></button>'
-      ],
       responsive: {
         0: {
           items: 1,
