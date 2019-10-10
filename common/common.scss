@@ -25,9 +25,10 @@ html {
   }
 
   .feed-nav-wrapper {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-    font-size: $font-up-3;
+    font-size: $font-up-4;
   }
 
   .article-wrapper {
@@ -36,6 +37,7 @@ html {
   .article-link {
     color: $primary;
     font-weight: bold;
+    margin-bottom: 0;
     line-height: $line-height-large;
     display: -webkit-box;
     -webkit-line-clamp: 2;
