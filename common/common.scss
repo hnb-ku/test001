@@ -10,7 +10,14 @@ html {
   padding-bottom: 2em;
   border-bottom: 2px solid $primary-low;
   margin: 3em 0 2em 0;
-  overflow: scroll hidden;
+
+  .article-feed-heading-wrapper {
+    .article-feed-heading {
+      border-bottom: 5px solid $tertairy;
+      padding: 0 1.35em;
+      font-size: $font-up-2;
+    }
+  }
 
   .article-wrapper {
   }
