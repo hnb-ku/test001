@@ -58,7 +58,8 @@ export default Ember.Component.extend({
 
   carousel() {
     $(".owl-carousel").owlCarousel({
-      loop: false,
+      loop: true,
+      stagePadding: 50,
       margin: 10,
       dots: false,
       navContainer: ".feed-nav-wrapper",
