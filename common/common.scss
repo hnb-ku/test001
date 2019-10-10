@@ -12,11 +12,17 @@ html {
   margin: 3em 0 2em 0;
 
   .article-feed-heading-wrapper {
+    width: 100%;
     .article-feed-heading {
       border-bottom: 5px solid $tertiary;
       padding: 0 1.35em;
       font-size: $font-up-2;
+      display: inline-block;
     }
+  }
+
+  .feed-nav-wrapper {
+    width: 100%;
   }
 
   .article-wrapper {
