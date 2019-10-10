@@ -62,3 +62,14 @@
     -webkit-box-orient: vertical;
   }
 }
+
+// prevent feed overflow
+.mobile-view {
+  .list-controls {
+    > .container {
+      > div {
+        max-width: 100%;
+      }
+    }
+  }
+}
