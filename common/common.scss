@@ -85,6 +85,9 @@ html {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  &.disabled {
+    display: none;
+  }
   font-size: 2em;
   margin-bottom: -0.75em;
 }
