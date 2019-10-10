@@ -74,6 +74,13 @@ html {
 
 // carousel
 
+.owl-next,
+.owl-prev {
+  background: none;
+  border: none;
+  outline: none;
+}
+
 .feed-nav-wrapper {
   width: 100%;
   display: flex;
