@@ -18,16 +18,19 @@ html {
         transition: all 0.15s;
         font-size: $font-up-1;
         position: relative;
+        border: 1px solid transparent;
 
         &:hover {
           color: $tertiary;
           background-color: transparent;
+          border-color: $tertiary;
         }
       }
 
       a.active {
         color: $tertiary;
         background-color: transparent;
+        border-color: $tertiary;
       }
     }
   }
